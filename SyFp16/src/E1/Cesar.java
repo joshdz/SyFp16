@@ -10,5 +10,16 @@ package E1;
  * @author jjlui
  */
 public class Cesar {
+   public String cifrar(String m, int c){
+       
+       
+       for(int i = 0; i <= m.length() + c; i++){
+           char result= m.charAt(c)
+       }
+   }
+    
+    
+    
+    
     
 }

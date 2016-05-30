@@ -11,6 +11,6 @@ package E1;
  */
 public class Test {
     public static void main(String[] args) {
-        System.out.println("Hola Jos2");
+        System.out.println("Hola Jos");
     }
 }
