@@ -24,11 +24,11 @@ public class TraductorGrafico extends javax.swing.JFrame {
     public TraductorGrafico() {
         initComponents();
         d= new Traductor();
-        d.agregar("hola", "hello");
+        d.agregar("hola","hello");
         
         texto1.addKeyListener(new KeyAdapter() {
-             String palabra1 ="";
-             String traduccion1 ="";
+             String t ="";
+             String t1 ="";
             
             public void keyTyped(KeyEvent e) {
                 
@@ -36,20 +36,20 @@ public class TraductorGrafico extends javax.swing.JFrame {
              char key= e.getKeyChar();
               
                if(key!= ' ' && key!=10 && key!= 8){
-                  palabra1=palabra1+key;
+                  t=t+key;
                    
                }
                  if (key==8){
-                 palabra1=  palabra1.substring(0,palabra1.length()-1); 
+                 t=  t.substring(0,t.length()-1); 
                 
                    
                }
                   if(key== 10 || key == ' ' ) {
-                   traduccion1 = traduccion1+ " "+ d.traducir(palabra1);
-                   palabra1= "";
+                   t1= t1+ " "+ d.traducir(t);
+                   t= "";
                    
                }
-                  texto2.setText(palabra1);
+                  texto2.setText(t);
             }
             
         });

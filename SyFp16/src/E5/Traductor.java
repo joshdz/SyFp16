@@ -31,9 +31,9 @@ public class Traductor {
        else return traduccion.get(i);
     }
     
-    public void agregar(String traduccion1, String palabra1){
-        palabra.add(palabra1);
-        traduccion.add(traduccion1);
+    public void agregar(String t, String t1){
+        palabra.add(t);
+        traduccion.add(t1);
         
     }
     
