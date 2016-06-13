@@ -22,28 +22,42 @@ public class ConvertidorGrafico extends javax.swing.JFrame {
         b1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                 //To change body of generated methods, choose Tools | Templates.
+               String c1= (String) cb1.getSelectedItem();//To change body of generated methods, choose Tools | Templates.
+               String c2 = (String) cb2.getSelectedItem();
+               Double p = new Double (t1.getText());
+               
+               double valor = p.doubleValue();
+               
+               Convertidor c = new Convertidor();
+                double d1 = c.convertir(c1, valor, c2);
+                Double t = new Double(d1);
+                t2.setText(t.toString());
+                
+              
+                
+               
             }
         });
         
         
-        
+        cb1.removeAllItems();
+        cb2.removeAllItems();
         
         cb1.addItem("centimetros");
         cb1.addItem("metros");
-        cb1.addItem("Kilometros");
-        cb1.addItem("Pulgadas");
-        cb1.addItem("Pies");
-        cb1.addItem("Yardas");
-        cb1.addItem("Millas");
+        cb1.addItem("kilometros");
+        cb1.addItem("pulgadas");
+        cb1.addItem("pies");
+        cb1.addItem("yardas");
+        cb1.addItem("millas");
         
         cb2.addItem("centimetros");
         cb2.addItem("metros");
-        cb2.addItem("Kilometros");
-        cb2.addItem("Pulgadas");
-        cb2.addItem("Pies");
-        cb2.addItem("Yardas");
-        cb2.addItem("Millas");
+        cb2.addItem("kilometros");
+        cb2.addItem("pulgadas");
+        cb2.addItem("pies");
+        cb2.addItem("yardas");
+        cb2.addItem("millas");
     }
 
     /**
@@ -63,15 +77,14 @@ public class ConvertidorGrafico extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        t1.setText("jTextField1");
-
-        t2.setText("jTextField2");
-
+        cb1.setForeground(new java.awt.Color(255, 73, 85));
         cb1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        cb2.setForeground(new java.awt.Color(255, 69, 106));
         cb2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        b1.setText("jButton1");
+        b1.setForeground(new java.awt.Color(213, 118, 237));
+        b1.setText("Convertir");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -81,17 +94,17 @@ public class ConvertidorGrafico extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(108, 108, 108)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(t1, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                            .addComponent(t2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(t1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(t2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(119, 119, 119)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cb2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cb1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(cb2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cb1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(226, 226, 226)
                         .addComponent(b1)))
-                .addContainerGap(290, Short.MAX_VALUE))
+                .addContainerGap(328, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

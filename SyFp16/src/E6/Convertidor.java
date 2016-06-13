@@ -23,7 +23,7 @@ public class Convertidor {
             double inch = mapa.get(s1);
             return cm/inch;
         }
-        return 0;
+        return 0.00;
     }
 
     public Convertidor() {
@@ -31,16 +31,16 @@ public class Convertidor {
         mapa.put("metros", 1.00);
         mapa.put("kilometros", 1000.00);
         mapa.put("pulgadas",0.0254);
-        mapa.put("Pies", 0.305);
-        mapa.put("Yardas",0.919);
-        mapa.put("Millas", 1613.00);
+        mapa.put("pies", 0.305);
+        mapa.put("yardas",0.919);
+        mapa.put("millas", 1613.00);
         
     }
     
     public static void main(String[] args) {
       Convertidor c = new Convertidor();
       double d1 = c.convertir( "centimetros", 30.00, "pulgadas");
-        System.out.println(d1);
+        System.out.println(d1); 
     }
     
 }
