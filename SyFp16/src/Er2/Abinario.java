@@ -25,5 +25,7 @@ public class Abinario extends Archivo {
     public void desplegarArchivo() {
         System.out.println("Se ha abierto");
     }
+
+    
     
 }

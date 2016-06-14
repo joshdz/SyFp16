@@ -26,7 +26,9 @@ public class Atexto extends Archivo {
         System.out.println("Se ha abierto");
     }
 
-    @Override
+    
+
+    
     
     
 }

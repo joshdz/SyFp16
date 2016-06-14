@@ -29,4 +29,6 @@ public class Aimagen extends Archivo {
     public void ConvertirBlancoynegro(){
         
     }
+
+    
 }

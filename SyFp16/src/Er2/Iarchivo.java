@@ -10,7 +10,7 @@ package Er2;
  * @author jjlui
  */
 public interface Iarchivo {
-    public int abrirArchivo();
+    public int abrirArchivo(String nombreArchivo, String tipoArchivo);
     public int cerrarArchivo();
     public void desplegarArchivo();
 }
