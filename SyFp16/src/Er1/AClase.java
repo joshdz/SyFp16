@@ -9,21 +9,15 @@ package Er1;
  *
  * @author jjlui
  */
-public abstract class AClase  {
-    public String descripcion;
+public abstract class AClase implements IClase {
+   
+    protected String descripcion;
 
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
+   
+   public AClase(String descripcion){
         this.descripcion = descripcion;
     }
     
-    
-    public AClase(String descripcion){
-        this.descripcion = descripcion;
-    }
-    
+   
     
 }

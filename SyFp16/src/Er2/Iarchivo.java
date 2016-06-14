@@ -3,18 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Er1;
+package Er2;
 
 /**
  *
  * @author jjlui
  */
-public  interface IClase  {
-
-     public void print();
+public interface Iarchivo {
+    public int abrirArchivo();
+    public int cerrarArchivo();
+    public void desplegarArchivo();
 }
-
-   
-
-   
-    

@@ -11,6 +11,10 @@ package Er1;
  */
 public class Main {
     public static void main(String[] args) {
+        IClase a = new  C1("addd");
+        AClase i = new C3("Ashas");
+       C2 cc = new C2("asjas");
+       
         
         
         
