@@ -12,16 +12,19 @@ package Er2;
 public class Aimagen extends Archivo {
 
     
+    @Override
     public int abrirArchivo(String nombreArchivo, String tipoArchivo) {
         return 0;
     }
 
     
+    @Override
     public int cerrarArchivo() {
         return 1;
     }
 
     
+    @Override
     public void desplegarArchivo() {
         System.out.println("Se ha abierto");
     }
