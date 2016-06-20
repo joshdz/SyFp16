@@ -37,9 +37,7 @@ public class HoyNC extends javax.swing.JFrame {
         b2.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                String s1;
-                s1 = n.getByPlaca("");
-                t1.setText(s1);
+                
             
             }
             
