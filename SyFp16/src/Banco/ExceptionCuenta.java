@@ -9,7 +9,7 @@ package Banco;
  *
  * @author jjlui
  */
-public class ExceptionCuenta extends Exception  {
+public class ExceptionCuenta extends Exception {
 
     public ExceptionCuenta(String message) {
         super(message);
@@ -18,5 +18,5 @@ public class ExceptionCuenta extends Exception  {
     public ExceptionCuenta(String message, Throwable cause) {
         super(message, cause);
     }
-    
+
 }

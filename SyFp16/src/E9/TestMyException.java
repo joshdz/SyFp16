@@ -10,22 +10,20 @@ package E9;
  * @author jjlui
  */
 public class TestMyException {
-    
-    public void test(String s) throws MyException{
-        if(s == null){
+
+    public void test(String s) throws MyException {
+        if (s == null) {
             throw new MyException("Mi excepcion lanzada");
-        }
-        else {
+        } else {
             System.out.println("Mi exepcion no es lanzada");
         }
     }
-    
+
     public static void main(String[] args) {
         try {
             TestMyException t = new TestMyException();
             t.test(null);
-        } 
-        catch (MyException ex) {
+        } catch (MyException ex) {
             System.out.println(":(");
         }
     }
