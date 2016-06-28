@@ -16,24 +16,24 @@ import java.util.List;
  */
 public class Banco {
     
-    List<Cuenta> ListaCuenta;
+    List<Cuenta> ListaCuenta; // Lista
     List<Cliente> ListaClientes;
     
-    public Banco() {
-        ListaClientes = new ArrayList<>();
+    public Banco() { //constructor
+        ListaClientes = new ArrayList<>();// Instancia de Lista
         ListaCuenta = new ArrayList<>();
     }
     
-    public void agregarCliente(Cliente c) {
-        ListaClientes.add(c);
+    public void agregarCliente(Cliente c) { //metodo
+        ListaClientes.add(c); //agregar Lista
     }
     
-    public void agregarCuenta(Cuenta c1) {
+    public void agregarCuenta(Cuenta c1) { //metodo
         ListaCuenta.add(c1);
     }
     
-    public void guardarCliente() {
-        try (FileWriter fw = new FileWriter("clientes.txt", true)) {
+    public void guardarCliente() {// metodo
+        try (FileWriter fw = new FileWriter("clientes.txt", true)) { //instancia de filewriter dentro de try
             for (Cliente cl : ListaClientes) {// recorre cada cliente dentro de la lista
                 fw.write(cl.getIdCuenta() + "," + cl.getNombre() + "," + cl.getEdad() + "," + cl.getNumCuenta() + "\n");
             }
