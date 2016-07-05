@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+* To change this license header, choose License Headers in Project Properties.
+* To change this template file, choose Tools | Templates
+* and open the template in the editor.
  */
 package ETablas;
 
@@ -17,40 +17,83 @@ import javax.swing.table.AbstractTableModel;
  */
 public class Table extends AbstractTableModel {
 
-    String m[][];
+    String m[][]; //matriz row & column
     int i = 0;
+    String nombreArchivo;
+    String col[];
 
     Table() {
-        
+        //constructor vacio que pide GraphTable
+    }
+
+    public int numRenglones() {
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(nombreArchivo));
+            i = 0;
+
+            String linea;
+            linea = br.readLine();
+            while (linea != null) {
+                i = i + 1;
+                linea = br.readLine();
+            }
+
+        } catch (FileNotFoundException ex) {
+            System.out.println("FILE NOT FOUND");
+
+        } catch (IOException ex) {
+
+        }
+        return i;
+
+    }
+
+    public int numColumnas() {
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(nombreArchivo));
+            String linea;
+            linea = br.readLine();
+            i = 0;
+
+            col = linea.split(",");
+            i = col.length;
+        } catch (FileNotFoundException ex) {
+            System.out.println("FILE NOT FOUND");
+        } catch (IOException ex) {
+
+        }
+        return i;
     }
 
     @Override
-    public int getRowCount() {
-        return 100;
+    public int getRowCount() {// metodo abstracto de table model
+        return numRenglones();
     }
 
     @Override
-    public int getColumnCount() {
-        return 5;
+    public int getColumnCount() {// metodo abstracto de table model
+        return numColumnas();
     }
 
     @Override
-    public Object getValueAt(int rowIndex, int columnIndex) {
+    public Object getValueAt(int rowIndex, int columnIndex) {// metodo abstracto de table model
         return m[rowIndex][columnIndex];
     }
 
     public Table(String s1) throws FileNotFoundException, IOException {
-        m = new String[101][7];
+        nombreArchivo = s1;
+        m = new String[numRenglones()][numColumnas()];
         String row[];
-        BufferedReader br = null;
-        br = new BufferedReader(new FileReader("employees.csv"));
+        BufferedReader br = new BufferedReader(new FileReader(nombreArchivo));
         String linea;
         linea = br.readLine();
+        i = 0;
         while (linea != null) {
             row = linea.split(",");
-            m[i]=row;
-            i=i+1;
-            linea= br.readLine();
+
+            m[i] = row;
+            i = i + 1;
+            linea = br.readLine();
 
         }
     }
