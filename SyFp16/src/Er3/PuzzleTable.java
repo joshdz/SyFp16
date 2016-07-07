@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+* To change this license header, choose License Headers in Project Properties.
+* To change this template file, choose Tools | Templates
+* and open the template in the editor.
  */
 package Er3;
 
@@ -29,13 +29,14 @@ public class PuzzleTable extends AbstractTableModel {
     String row[];
 
     public PuzzleTable(String a) {
+
         int b = contarFrame();
         int c = contarGlue();
         int d = contarPuzzle();
         int e = contarStorage();
 
         nombreArchivo = a;
-        m = new String[3][3];
+        m = new String[4][3];
         m[0][0] = "1";
         m[0][1] = "FRAME";
         m[0][2] = "" + b;
@@ -64,7 +65,6 @@ public class PuzzleTable extends AbstractTableModel {
             while (linea != null) {
                 row = linea.split(";");
 
-                linea = br.readLine();
                 if (row[4].equals("FRAME")) {
                     i = i + 1;
                 }
@@ -88,7 +88,7 @@ public class PuzzleTable extends AbstractTableModel {
             linea = br.readLine();
             while (linea != null) {
                 row = linea.split(";");
-                linea = br.readLine();
+
                 if (row[4].equals("GLUE")) {
                     i = i + 1;
                 }
@@ -109,7 +109,7 @@ public class PuzzleTable extends AbstractTableModel {
             linea = br.readLine();
             while (linea != null) {
                 row = linea.split(";");
-                linea = br.readLine();
+
                 if (row[4].equals("PUZZLE")) {
                     i = i + 1;
                 }
@@ -133,7 +133,7 @@ public class PuzzleTable extends AbstractTableModel {
             linea = br.readLine();
             while (linea != null) {
                 row = linea.split(";");
-                linea = br.readLine();
+
                 if (row[4].equals("Storage")) {
                     i = i + 1;
                 }
@@ -151,7 +151,7 @@ public class PuzzleTable extends AbstractTableModel {
 
     @Override
     public int getRowCount() {
-        return 3;
+        return 4;
     }
 
     @Override
@@ -161,7 +161,7 @@ public class PuzzleTable extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        return rowIndex;
+        return m[rowIndex][columnIndex];
     }
 
 }
